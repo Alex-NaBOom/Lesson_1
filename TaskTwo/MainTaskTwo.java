@@ -1,4 +1,6 @@
-public class TaskTwo {
+package TaskTwo;
+
+public class MainTaskTwo {
     public static void main(String[] args) {
         Shape circle = new Circle(5, "Red", "Black");
         Shape rectangle = new Rectangle(4, 6, "Blue", "Green");
