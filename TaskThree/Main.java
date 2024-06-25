@@ -20,6 +20,7 @@ public class Main {
     private static String[][] array2 = {
             {"1", "2", "3"},
             {"4", "5", "6"},
+            {"4", "5", "6"},
             {"7", "8", "9"}
     };
 
@@ -49,22 +50,29 @@ public class Main {
 
     public static int checkArraySizeAndSumArray(String[][] array) throws RuntimeException {
         int sum = 0;
-        if (array.length != 4 || array[0].length != 4)
-            throw new MyArraySizeException("Массив не соответствует размерности 4х4!");
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                try {
-                    sum += Integer.parseInt(array[i][j]);
-                } catch (NumberFormatException e) {
-                    throw new MyArrayDataException("В переданном массиве элемент с Array[" + i + "][" + j + "] НЕ может быть конвертирован в число!!!");
-                }
+        if (array.length != 4) {
+            throw new MyArraySizeException("Неверное количество строк, массив не соответствует размерности 4х4!");
+        }
+        for (String[] row : array) {
+            if (row.length != 4) {
+                throw new MyArraySizeException("Неверное количество столбцов в строке, массив не соответствует размерности 4х4!");
             }
         }
-        return sum;
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array[i].length; j++) {
+                    try {
+                        sum += Integer.parseInt(array[i][j]);
+                    } catch (NumberFormatException e) {
+                        throw new MyArrayDataException("В переданном массиве элемент с Array[" + i + "][" + j + "] НЕ может быть конвертирован в число!!!");
+                    }
+                }
+            }
+            return sum;
 
+        }
     }
 
-}
+
 
 
 
