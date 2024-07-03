@@ -98,6 +98,7 @@ public class TestServicePaymentMTS_TaskOne {
 
     }
 
+
     @Test
     @DisplayName("Проверить надписи в незаполненных полях : Задолженность")
     void testPaymetZadolzhennost() {

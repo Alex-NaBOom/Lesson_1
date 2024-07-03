@@ -104,6 +104,7 @@ public class TestServicePaymentMTS_UslugiSvyaziTaskTwo {
         List<WebElement> images = container.findElements(By.tagName("img"));
         assertEquals(5, images.size(), "Количество изображений должно быть равно 5");
     }
+
     @AfterEach
     public void quit() {
         driver.quit();
